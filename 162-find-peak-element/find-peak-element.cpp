@@ -14,17 +14,21 @@ public:
             return mid; // greater i.e. both left and right side element is lesser than curent 
             else if(nums[mid]>nums[mid-1]) //nums[mid]>nums[mid+1] false i.e. right half is big
             start=mid+1;
-            //else if(nums[mid]>nums[mid+1]) //means nums[mid-1]>nums[mid] i.e. left half is big
-            //end=mid-1;
+
+            //means nums[mid-1]>nums[mid] i.e. left half is big end=mid-1; 
             //multiple peaks
-            else if(nums[mid]>nums[mid+1]) 
+            else if(nums[mid]>nums[mid+1])  
              end=mid-1;   
 
             //if both false i.e. both the halves are bigger i.e. [1,5,1,2,1] middle 1
             else
             end=mid-1; // go to either left half or right half i.e start=mid+1 also true
-
         }
         return -1; // as the function is expecting int to be returned although it won't ever execute
     }
-};
+}; 
+// as the question mentions that array contains multiple peaks so for sure atleast 1 peak exists and hence the following test case [1,1] is invalid here as it would never occur
+ // - infinity [1,1] -infinity
+ // index       0 1  ===> mid=0 line 13 1>-infinity  1>1 false means
+ // line 15 true element 1, 1>-infinity start = 1(index) now start=end=1(index) => mid=1
+ // line 25 else end = 0 then start<=end 1<=0 false so -1 return
