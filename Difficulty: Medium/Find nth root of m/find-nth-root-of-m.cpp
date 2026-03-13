@@ -12,12 +12,12 @@ class Solution {
                 n1--;
             }
             if(result==m){
-                ans=mid;
+                ans=mid; // returns exact nth root if exists
                 return ans;
             }
             else if(result<m){
-                // ans=mid;
-                start=mid+1;
+                // ans=mid; // ans=mid; since we're not asked to return nearest possible integer value
+                start=mid+1; // we've to return either exact nth root value or -1 if not exits
             }
             else{
                 end=mid-1;
