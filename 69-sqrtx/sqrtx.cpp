@@ -3,8 +3,8 @@ public:
     int mySqrt(int x) {
         int start=0,end=x,ans=0;
         while(start<=end){
-            long mid=start+(end-start)/2;
-            long result=mid*mid;
+            long mid=start+(end-start)/2; // we're using long because after dividing int value
+            long result=mid*mid; // we're multiplying it which may exceed the int range (UB)  
             if(result==x){
             ans=mid;     // it stores ans value when exact match is found
             return ans;
